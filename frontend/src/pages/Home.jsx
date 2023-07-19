@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-// import RecetteCard from "@components/RecetteCard";
+import RecetteCard from "@components/RecetteCard";
 import { useSearchParams } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import recipes from "../data/Data";
 import connexion from "../services/connexion";
 
 function Home() {
   const [categories, setCategories] = useState([]);
   const [recettes, setRecettes] = useState([]);
   const [categorie, setCategorie] = useState([]);
-  const [recette, setRecette] = useState([]);
+  const [recetteSelection, setRecetteSelection] = useState([]);
   const [search, setSearch] = useState([]);
   const [searchrecette, setSearchrecette] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -46,7 +45,7 @@ function Home() {
   };
 
   const handlechangeRecette = (event) => {
-    setRecette(event.target.value);
+    setRecetteSelection(event.target.value);
   };
 
   const handleSearch = (event) => {
@@ -124,6 +123,9 @@ function Home() {
           </div>
         </div>
       </section>
+      {recettes.map((rec) => (
+        <RecetteCard recette={rec} />
+      ))}
     </>
   );
 }
