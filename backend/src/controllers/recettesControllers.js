@@ -1,15 +1,28 @@
+// const { query } = require("express");
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.recettes
-    .findAll(req.query.title)
-    .then(([recettes]) => {
-      res.status(200).json(recettes);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
+  if (Object.keys(req.query).length === 0) {
+    models.recettes
+      .findAll()
+      .then(([recettes]) => {
+        res.status(200).json(recettes);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  } else {
+    models.recettes
+      .findAllByQuery(req.query)
+      .then(([recettes]) => {
+        res.status(200).json(recettes);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  }
 };
 
 const read = (req, res) => {

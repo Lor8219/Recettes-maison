@@ -7,10 +7,10 @@ import connexion from "../services/connexion";
 function Home() {
   const [categories, setCategories] = useState([]);
   const [recettes, setRecettes] = useState([]);
-  const [categorie, setCategorie] = useState([]);
+  const [categorie, setCategorie] = useState("");
   const [recetteSelection, setRecetteSelection] = useState([]);
-  const [search, setSearch] = useState([]);
-  const [searchrecette, setSearchrecette] = useState([]);
+  const [search, setSearch] = useState("");
+  const [displayRecettes, setDisplayRecettes] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const getCategories = async () => {
@@ -33,8 +33,10 @@ function Home() {
 
   const searchRecettes = async () => {
     try {
-      const AllRecettes = await connexion.get(`/recettes?title=${search}`);
-      setSearchrecette(AllRecettes);
+      const AllRecettes = await connexion.get(
+        `/recettes?title=${search}&categorie=${categorie}`
+      );
+      setDisplayRecettes(AllRecettes);
     } catch (error) {
       console.error(error);
     }
@@ -62,6 +64,12 @@ function Home() {
     getCategories();
     getRecettes();
   }, []);
+
+  useEffect(() => {
+    if (categorie !== "" || search !== "") {
+      searchRecettes();
+    }
+  }, [categorie, search]);
 
   return (
     <>
@@ -99,9 +107,9 @@ function Home() {
               name="Categorie"
               onChange={handlechangeCategorie}
             >
-              <option value="CATEGORIE">Categorie</option>
+              <option value="">Categorie</option>
               {categories.map((cat) => (
-                <option key={cat.id} value={cat.label}>
+                <option key={cat.id} value={cat.id}>
                   {cat.label}
                 </option>
               ))}
@@ -123,7 +131,7 @@ function Home() {
           </div>
         </div>
       </section>
-      {recettes.map((rec) => (
+      {displayRecettes.map((rec) => (
         <RecetteCard recette={rec} />
       ))}
     </>

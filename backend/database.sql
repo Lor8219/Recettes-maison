@@ -64,7 +64,7 @@ CREATE TABLE categories_to_recettes (
 
 INSERT INTO
  categories_to_recettes(recette_id, categorie_id)
-  VALUES (1, 4), (1, 2), (2, 2),(2, 1), (3, 3);
+  VALUES (1, 4), (2, 2), (2, 1), (3, 3);
 
 
 

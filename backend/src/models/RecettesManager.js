@@ -5,12 +5,21 @@ class RecettesManager extends AbstractManager {
     super({ table: "recettes" });
   }
 
-  findAll(title) {
-    let url = `select  * from ${this.table}`;
+  findAll() {
+    const url = `select  * from ${this.table}`;
+    return this.database.query(url);
+  }
+
+  findAllByQuery(query) {
+    let url = `select  * from categories_to_recettes as cr inner join ${this.table} as r on cr.recette_id = r.id `;
     const value = [];
-    if (title) {
-      url += ` where title like ? `;
-      value.push(`%${title}%`);
+    if (query.title) {
+      url += ` where r.title like ? `;
+      value.push(`%${query.title}%`);
+    }
+    if (query.categorie) {
+      url += ` and cr.categorie_id = ? `;
+      value.push(query.categorie);
     }
     return this.database.query(url, value);
   }

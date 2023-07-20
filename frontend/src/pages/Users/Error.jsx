@@ -6,14 +6,11 @@ function Error() {
     <div className="text-center text-secondary font-sans text-6xl">
       Erreur 404 Cette page est introuvable...
       <img
-        src="https://media.discordapp.net/attachments/1081687214460780575/1126793717735489607/77620-404-website-error-animation.gif?width=572&height=572"
+        src="https://media.discordapp.net/attachments/1081687214460780575/1131526714644762654/gateau_404.jpg"
         alt="Error 404"
-        className="mx-auto"
+        className="mx-auto block"
       />
-      <Link
-        to="/"
-        className="bg-gradient-to-r from-blue h-10 w-40 text-yellow font-semibold py-2 px-4 mr-5 rounded shadow"
-      >
+      <Link to="/" className="custom-button">
         Retour à l'accueil
       </Link>
     </div>
