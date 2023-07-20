@@ -43,11 +43,15 @@ body {
   margin: 10px;
   border-width: 5px;
   border-style: solid;
+  display: flex;
+  justify-content: center;
 }
 
 .home {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .custom-button {
@@ -85,7 +89,6 @@ form {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  /* border: 1px solid #ccc; */
   border-radius: 5px;
 }
 
@@ -94,10 +97,9 @@ label {
   margin-bottom: 10px;
 }
 
-input,
 textarea {
   width: 100%;
-  padding: 20px;
+  padding: 30px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -111,18 +113,16 @@ input[type="submit"] {
   background-color: #ffc1e1;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 30px;
   cursor: pointer;
   border-radius: 5px;
 }
 
-/* Style pour les messages d'erreur */
 input:invalid,
 textarea:invalid {
   border-color: white;
 }
 
-/* Style pour les messages d'erreur affichés */
 input:invalid + span,
 textarea:invalid + span {
   color: #ff0000;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Contact() {
   const [nom, setNom] = useState("");
@@ -19,7 +20,7 @@ function Contact() {
     <div>
       <h1>Besoin d'aide? Contactez-nous</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="nom">Nom :</label>
+        <label htmlFor="nom">Nom </label>
         <input
           type="text"
           id="nom"
@@ -30,7 +31,7 @@ function Contact() {
         />
         <br />
 
-        <label htmlFor="prénom">Prénom :</label>
+        <label htmlFor="prénom">Prénom </label>
         <input
           type="text"
           id="prénom"
@@ -41,7 +42,7 @@ function Contact() {
         />
         <br />
 
-        <label htmlFor="email">Email :</label>
+        <label htmlFor="email">Email </label>
         <input
           type="email"
           id="email"
@@ -52,7 +53,7 @@ function Contact() {
         />
         <br />
 
-        <label htmlFor="message">Message :</label>
+        <label htmlFor="message">Message </label>
         <textarea
           id="message"
           name="message"
@@ -64,6 +65,9 @@ function Contact() {
 
         <input type="submit" value="Envoyer" />
       </form>
+      <Link to="/" className="custom-button">
+        Retour à l'accueil
+      </Link>
     </div>
   );
 }

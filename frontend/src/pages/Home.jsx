@@ -101,33 +101,35 @@ function Home() {
               <FaSearch id="search-icon" />
             </button>
           </div>
-          <div className="categorieList-container">
-            <select
-              className="select"
-              name="Categorie"
-              onChange={handlechangeCategorie}
-            >
-              <option value="">Categorie</option>
-              {categories.map((cat) => (
-                <option key={cat.id} value={cat.id}>
-                  {cat.label}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="RecetteList-container">
-            <select
-              className="select"
-              name="Recettes"
-              onChange={handlechangeRecette}
-            >
-              <option value="Recettes">Recettes</option>
-              {recettes.map((rec) => (
-                <option key={rec.id} value={rec.title}>
-                  {rec.title}
-                </option>
-              ))}
-            </select>
+          <div className="filter-container">
+            <div className="categorieList-container">
+              <select
+                className="select"
+                name="Categorie"
+                onChange={handlechangeCategorie}
+              >
+                <option value="">Categorie</option>
+                {categories.map((cat) => (
+                  <option key={cat.id} value={cat.id}>
+                    {cat.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="RecetteList-container">
+              <select
+                className="select"
+                name="Recettes"
+                onChange={handlechangeRecette}
+              >
+                <option value="Recettes">Recettes</option>
+                {recettes.map((rec) => (
+                  <option key={rec.id} value={rec.title}>
+                    {rec.title}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
       </section>
