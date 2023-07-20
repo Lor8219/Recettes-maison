@@ -131,9 +131,11 @@ function Home() {
           </div>
         </div>
       </section>
-      {displayRecettes.map((rec) => (
-        <RecetteCard recette={rec} />
-      ))}
+      <section className="recettesContainer">
+        {displayRecettes.map((rec) => (
+          <RecetteCard recette={rec} />
+        ))}
+      </section>
     </>
   );
 }

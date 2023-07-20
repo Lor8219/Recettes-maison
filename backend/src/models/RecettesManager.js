@@ -11,7 +11,7 @@ class RecettesManager extends AbstractManager {
   }
 
   findAllByQuery(query) {
-    let url = `select  * from categories_to_recettes as cr inner join ${this.table} as r on cr.recette_id = r.id `;
+    let url = `select  * from categories_to_recettes as cr inner join ${this.table} as r on cr.recette_id = r.id inner join images as i on i.id = r.image_id `;
     const value = [];
     if (query.title) {
       url += ` where r.title like ? `;

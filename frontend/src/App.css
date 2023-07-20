@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: anabelle-script;
-  background-color:#f5e3ed;
+  background-color: #f5e3ed;
 }
 
 .App {
@@ -52,8 +52,8 @@ body {
 
 .custom-button {
   position: absolute;
-  bottom: 100px; 
-  left: 40px; 
+  bottom: 100px;
+  left: 40px;
   background-color: #ffc1e1;
   color: black;
   font-weight: bold;
@@ -71,13 +71,60 @@ body {
 
 .error-image {
   position: absolute;
-  top: 80px; 
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .error-text {
   font-size: 4rem;
-  color: #999; 
+  color: #999;
 }
 
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #ffc1e1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Style pour les messages d'erreur */
+input:invalid,
+textarea:invalid {
+  border-color: white;
+}
+
+/* Style pour les messages d'erreur affichés */
+input:invalid + span,
+textarea:invalid + span {
+  color: #ff0000;
+  font-size: 12px;
+}

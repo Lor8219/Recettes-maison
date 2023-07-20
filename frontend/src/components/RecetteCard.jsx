@@ -5,7 +5,7 @@ function RecetteCard({ recette }) {
     <div key={recette.id}>
       <div className="card-header">
         <div className="card-img">
-          <img src={recette.image} alt="recette-img" />
+          <img src={recette.src} alt="recette-img" />
         </div>
       </div>
       <div className="card-body">
