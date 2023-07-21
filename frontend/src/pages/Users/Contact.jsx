@@ -23,6 +23,7 @@ function Contact() {
         <label htmlFor="nom">Nom </label>
         <input
           type="text"
+          className="enter-input"
           id="nom"
           name="nom"
           value={nom}

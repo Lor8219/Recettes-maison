@@ -7,7 +7,7 @@ CREATE TABLE images (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO images(src, alt)
-VALUES('https://media.discordapp.net/attachments/1081687214460780575/1107655582808281088/chocolate-chip-cookie-fond-blanc.jpg?width=914&height=609', 'cookies');
+VALUES('https://media.discordapp.net/attachments/1081687214460780575/1131858936836935680/Cookies1_modif.jpg', 'cookies');
 INSERT INTO images(src, alt)
 VALUES("https://p7.storage.canalblog.com/78/75/1332261/103966229.jpg", 'roulé chorizo');
 

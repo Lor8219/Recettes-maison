@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RecetteCard from "@components/RecetteCard";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import connexion from "../services/connexion";
 
@@ -12,6 +12,7 @@ function Home() {
   const [search, setSearch] = useState("");
   const [displayRecettes, setDisplayRecettes] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  // const history = useHistory();
 
   const getCategories = async () => {
     try {
@@ -86,6 +87,9 @@ function Home() {
           prétention qui raviront votre famille et vos amis. Vous trouverez des
           recettes salées comme sucrées.
         </p>
+        <Link to="/contact" className="contact-link">
+          Contact@
+        </Link>
       </header>
       <section>
         <div className="home">
@@ -97,7 +101,11 @@ function Home() {
               onChange={handleSearch}
               value={search}
             />
-            <button type="submit" onClick={UpdateParams} className="p-4">
+            <button
+              type="submit"
+              onClick={UpdateParams}
+              className="search-bouton"
+            >
               <FaSearch id="search-icon" />
             </button>
           </div>
