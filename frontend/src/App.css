@@ -1,15 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: anabelle-script;
+  background-color: #f5e3ed;
 }
 
 .App {
@@ -21,36 +13,158 @@ code {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #f2ebf2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(240, 167, 225);
+  font-family: anabelle-script;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  padding: 5px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filters {
+  height: 40vmin;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select {
+  height: 10vmin;
+  width: 30vmin;
+  margin: 30px;
+  border-width: 5px;
+  border-style: solid;
+  text-align: center;
+  border-color: #ffc1e1;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search-bouton {
+  height: 50px;
+  border-color: #ffc1e1;
+}
+
+.search-input {
+  height: 10vmin;
+  margin: 10px;
+  border-width: 5px;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  border-color: #ffc1e1;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-button {
+  position: absolute;
+  bottom: 100px;
+  left: 40px;
+  background-color: #ffc1e1;
+  color: black;
+  font-weight: bold;
+  padding: 25px 40px;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-button:hover {
+  background-color: #ffefb4;
+}
+
+.error-image {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.error-text {
+  font-size: 4rem;
+  color: #999;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #555;
+}
+
+input[type="submit"] {
+  background-color: #ffc1e1;
+  color: #fff;
+  border: none;
+  padding: 20px 30px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input:invalid,
+textarea:invalid {
+  border-color: white;
+}
+
+input:invalid + span,
+textarea:invalid + span {
+  color: #ff0000;
+  font-size: 12px;
 }
