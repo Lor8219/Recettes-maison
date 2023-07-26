@@ -11,17 +11,15 @@ class CategoriesManager extends AbstractManager {
 
   find(id) {
     return this.database.query(
-      `select * from  ${this.table} as c
-    inner join categories_to_recettes as ctr on ctr.categorie_id = categories(id)
-    inner join recettes as r on ctr.recette_id = recettes(id)
-    where categorie_id = ?`,
+      `select * from  ${this.table} as c where 
+    c.id = ?`,
       [id]
     );
   }
 
   insert(categories) {
-    return this.database.query(`insert into ${this.table} (title) values (?)`, [
-      categories.title,
+    return this.database.query(`insert into ${this.table} (label) values (?)`, [
+      categories.label,
     ]);
   }
 

@@ -24,6 +24,16 @@ class RecettesManager extends AbstractManager {
     return this.database.query(url, value);
   }
 
+  findRecetteByCategory(id) {
+    return this.database.query(
+      `select * from  ${this.table} as c
+    inner join categories_to_recettes as ctr on ctr.categorie_id = c.id
+    inner join recettes as r on ctr.recette_id = r.id
+    where categorie_id = ?`,
+      [id]
+    );
+  }
+
   find(id) {
     return this.database.query(`select * from  ${this.table} where id = ?`, [
       id,
